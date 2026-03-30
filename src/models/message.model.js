@@ -18,6 +18,14 @@ const messageSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    video: {
+      type: String, // Video URL store karne ke liye
+    },
+    status: {
+      type: String,
+      enum: ["sent", "delivered", "seen"],
+      default: "sent", // By default single tick (sent) rahega
+    },
   },
   { timestamps: true }
 );
